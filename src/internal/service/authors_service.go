@@ -39,10 +39,6 @@ func (s *authorService) GetByID(id string) ([]model.Authors, error) {
 }
 
 func (s *authorService) Create(req *model.CreateAuthor) error {
-	// Бизнес-валидация
-	if req.FirstName == nil || *req.FirstName == "" {
-		return errors.New("first name is required")
-	}
 	if req.LastName == nil || *req.LastName == "" {
 		return errors.New("last name is required")
 	}
@@ -50,14 +46,9 @@ func (s *authorService) Create(req *model.CreateAuthor) error {
 }
 
 func (s *authorService) Replace(id string, req *model.UpdateAuthor) error {
-	// Проверка на обязательные поля для PUT
-	if req.FirstName == nil || *req.FirstName == "" {
-		return errors.New("first name is required for replace")
-	}
 	if req.LastName == nil || *req.LastName == "" {
-		return errors.New("last name is required for replace")
+		return errors.New("last name is required")
 	}
-
 	rowsAffected, err := s.repo.Replace(id, req)
 	if err != nil {
 		return err
