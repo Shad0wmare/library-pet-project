@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "library-pet-project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get authors",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/authors",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "authors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get author by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/author/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "author",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Edit author info",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Дмитрий\",\r\n    \"lastName\": \"Глуховский\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/authors",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "authors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Replace author info",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Дмитрий\",\r\n    \"lastName\": \"Глуховский\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/author/13",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "author",
+            "13"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Replace author info",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Дмитрий\",\r\n    \"lastName\": \"Глуховский\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/author/13",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "author",
+            "13"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete author info",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/author/13",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "author",
+            "13"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
