@@ -43,7 +43,7 @@ func (h *AuthorHandler) AddAuthor(c fiber.Ctx) error {
 	}
 
 	if err := h.service.Create(&req); err != nil {
-		if err.Error() == "first name is required" || err.Error() == "last name is required" {
+		if err.Error() == "last name is required" {
 			return c.Status(http.StatusBadRequest).SendString(err.Error())
 		}
 		return c.Status(http.StatusInternalServerError).SendString(err.Error())
@@ -62,8 +62,7 @@ func (h *AuthorHandler) ReplaceAuthorInfo(c fiber.Ctx) error {
 		if err.Error() == "author not found" {
 			return c.Status(http.StatusNotFound).SendString(err.Error())
 		}
-		if err.Error() == "first name is required for replace" ||
-			err.Error() == "last name is required for replace" {
+		if err.Error() == "last name is required for replace" {
 			return c.Status(http.StatusBadRequest).SendString(err.Error())
 		}
 		return c.Status(http.StatusInternalServerError).SendString(err.Error())
